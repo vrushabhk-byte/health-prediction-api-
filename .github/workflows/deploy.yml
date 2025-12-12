@@ -10,6 +10,7 @@ env:
   ECS_CLUSTER: health-prediction-cluster1
   ECS_SERVICE: health-prediction-task-service-gvI8fud
   ECS_TASK_DEFINITION: health-prediction-task2    # ← exact family name
+  #CONTAINER_NAME: prediction-container
   CONTAINER_NAME: prediction-container
 
 jobs:
