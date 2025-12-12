@@ -9,7 +9,8 @@ env:
   ECR_REPOSITORY: health-prediction-api
   ECS_CLUSTER: health-prediction-cluster1
   ECS_SERVICE: health-prediction-task-service-gvI8fud
-  ECS_TASK_DEFINITION: health-prediction-task2    # ← exact family name
+  #ECS_TASK_DEFINITION: health-prediction-task    # ← exact family name
+  ECS_TASK_DEFINITION: health-prediction-task
   #CONTAINER_NAME: prediction-container
   CONTAINER_NAME: prediction-container
 
