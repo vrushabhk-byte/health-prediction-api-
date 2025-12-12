@@ -8,10 +8,8 @@ env:
   AWS_REGION: eu-north-1
   ECR_REPOSITORY: health-prediction-api
   ECS_CLUSTER: health-prediction-cluster1
-  ECS_SERVICE: health-prediction-task-service-gvI8fud
-  #ECS_TASK_DEFINITION: health-prediction-task    # ← exact family name
+  ECS_SERVICE: health-prediction-task-service-gv6i8fud
   ECS_TASK_DEFINITION: health-prediction-task
-  #CONTAINER_NAME: prediction-container
   CONTAINER_NAME: prediction-container
 
 jobs: 
