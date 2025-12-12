@@ -1,5 +1,11 @@
-# health-prediction-api-
+## 🏗️ Architecture
 
-# Real deployment – December 12 2025
+The application is deployed using AWS managed services with a fully automated CI/CD pipeline.
 
-# Test permissions fix
+- Source code is hosted on GitHub
+- GitHub Actions builds, tests, and deploys the application
+- Docker images are stored in Amazon ECR
+- Application runs on Amazon ECS using Fargate
+- Monitoring and alerting are handled via Amazon CloudWatch
+
+The architecture ensures scalability, security, and zero-downtime deployments.
