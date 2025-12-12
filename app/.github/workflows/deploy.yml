@@ -26,7 +26,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ${{ env.AWS_REGION }}
-          role-to-assume: arn:aws:iam::YOUR_ACCOUNT_ID:role/github-actions-role  # Create this role with OIDC
+          role-to-assume: arn:aws:iam::010497664065:role/github-actions-role  # Create this role with OIDC
 
       - name: Login to Amazon ECR
         id: login-ecr
