@@ -13,7 +13,7 @@ env:
   #CONTAINER_NAME: prediction-container
   CONTAINER_NAME: prediction-container
 
-jobs:
+jobs: 
   deploy:
     runs-on: ubuntu-latest
     permissions:
