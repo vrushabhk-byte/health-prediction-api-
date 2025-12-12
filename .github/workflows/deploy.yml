@@ -9,8 +9,7 @@ env:
   ECR_REPOSITORY: health-prediction-api
   ECS_CLUSTER: health-prediction-cluster1
   ECS_SERVICE: health-prediction-task-service-gvI8fud
-  #ECS_TASK_DEFINITION: ECS_TASK_DEFINITION: health-prediction-task2 
-  ECS_TASK_DEFINITION: health-prediction-task2
+  ECS_TASK_DEFINITION: health-prediction-task2    # ← exact family name
   CONTAINER_NAME: prediction-container
 
 jobs:
@@ -45,11 +44,11 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
-      - name: Download task definition
+      - name: Download current task definition (with fallback)
         run: |
-          aws ecs describe-task-definition --task-definition ${{ env.ECS_TASK_DEFINITION }} --query taskDefinition > task-definition.json
+          aws ecs describe-task-definition --task-definition ${{ env.ECS_TASK_DEFINITION }} --query taskDefinition > task-definition.json || echo '{"containerDefinitions":[]}' > task-definition.json
 
-      - name: Fill in new image ID
+      - name: Fill in the new image ID
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
